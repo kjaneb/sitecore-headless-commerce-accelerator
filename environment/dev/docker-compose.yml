@@ -3,6 +3,7 @@ version: '2.4'
 services:
   sql:
     image: ${REGISTRY}sitecore-xc-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_sql
     volumes:
       - .\data\sql:C:\Data
     isolation: ${ISOLATION}
@@ -15,6 +16,7 @@ services:
 
   solr:
     image: ${REGISTRY}sitecore-xc-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_solr
     volumes:
       - .\data\solr:C:\Data
     isolation: ${ISOLATION}
@@ -24,6 +26,7 @@ services:
 
   xconnect:
     image: ${REGISTRY}sitecore-xc-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_xconnect
     volumes:
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
@@ -46,6 +49,7 @@ services:
 
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xc-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_xconnect-automationengine
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1"
     volumes:
       - .\data\xconnect-automationengine:C:\worker\App_Data\logs
@@ -63,6 +67,7 @@ services:
 
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xc-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_xconnect-indexworker
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1"
     volumes:
       - .\data\xconnect-indexworker:C:\worker\App_Data\logs
@@ -80,6 +85,7 @@ services:
 
   xconnect-processingengine:
     image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_xconnect-processingengine
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1"
     volumes:
       - .\data\xconnect-processingengine:C:\worker\App_Data\logs
@@ -104,6 +110,7 @@ services:
 
   cd:
     image: ${REGISTRY}sitecore-xc-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_cd
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
@@ -135,6 +142,7 @@ services:
 
   cm:
     image: ${REGISTRY}sitecore-xc-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_cm
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
@@ -175,6 +183,7 @@ services:
 
   commerce-authoring:
     image: ${REGISTRY}sitecore-xc-engine-authoring:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_commerce-authoring
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\sitecore-xc-engine\\Development.ps1"
     environment:
       - "ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true"
@@ -192,6 +201,7 @@ services:
 
   commerce-minions:
     image: ${REGISTRY}sitecore-xc-engine-minions:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_commerce-minions
     mem_limit: 1GB
     volumes:
       - .\data\commerce-minions:C:\inetpub\wwwroot\wwwroot\logs
@@ -204,6 +214,7 @@ services:
 
   commerce-ops:
     image: ${REGISTRY}sitecore-xc-engine-ops:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_commerce-ops
     mem_limit: 1GB
     volumes:
       - .\data\commerce-ops:C:\inetpub\wwwroot\wwwroot\logs
@@ -216,6 +227,7 @@ services:
 
   commerce-shops:
     image: ${REGISTRY}sitecore-xc-engine-shops:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_commerce-shops
     mem_limit: 1GB
     volumes:
       - .\data\commerce-shops:C:\inetpub\wwwroot\wwwroot\logs
@@ -228,6 +240,7 @@ services:
 
   bizfx:
     image: ${REGISTRY}sitecore-xc-bizfx:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_bizfx
     mem_limit: 1GB
     ports:
       - "4200:80"
@@ -238,11 +251,13 @@ services:
 
   redis:
     image: ${REGISTRY}sitecore-redis:3.0.504-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_redis
     mem_limit: 1GB
     isolation: ${ISOLATION}
 
   identity:
     image: ${REGISTRY}sitecore-xc-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    container_name: ${COMPOSE_PROJECT_NAME}_identity
     mem_limit: 1GB
     volumes:
       - ${LICENSE_PATH}:C:\license
