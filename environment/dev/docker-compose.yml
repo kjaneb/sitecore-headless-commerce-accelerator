@@ -111,11 +111,9 @@ services:
   cd:
     image: ${REGISTRY}sitecore-xc-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}_cd
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\custom\\Startup-Cd.ps1"
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
-      - .\data\certificates:C:\certificates
-      - .\entrypoints:C:\tools\entrypoints\custom
       - .\output\cd:C:\src
       - ${REMOTE_DEBUGGER_PATH}:C:\remote_debugger
     mem_limit: 2GB
@@ -134,9 +132,6 @@ services:
       SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.OPERATIONS.CLIENT: http://xconnect
       SITECORE_CONNECTIONSTRINGS_SITECORE.REPORTING.CLIENT: http://xconnect
       SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA.CLIENT: http://xconnect
-      IIS_HOSTS: ${HOSTS_CD}
-      SSL_CERTIFICATE_NAME: ${SSL_CERTIFICATE_NAME}
-      SSL_CERTIFICATE_PASSWORD: ${SSL_CERTIFICATE_PASSWORD}
     depends_on:
       - commerce-ops
       - commerce-shops
@@ -148,11 +143,9 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xc-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}_cm
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\custom\\Startup-Cm.ps1"
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
-      - .\data\certificates:C:\certificates
-      - .\entrypoints:C:\tools\entrypoints\custom
       - .\output\cm:C:\src
       - ${REMOTE_DEBUGGER_PATH}:C:\remote_debugger
     ports:
@@ -181,9 +174,6 @@ services:
       SITECORE_APPSETTINGS_TELERIK.ASYNCUPLOAD.CONFIGURATIONENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
       SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
       SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
-      IIS_HOSTS: ${HOSTS_CM}
-      SSL_CERTIFICATE_NAME: ${SSL_CERTIFICATE_NAME}
-      SSL_CERTIFICATE_PASSWORD: ${SSL_CERTIFICATE_PASSWORD}
     depends_on:
       - sql
       - solr
@@ -252,15 +242,8 @@ services:
     image: ${REGISTRY}sitecore-xc-bizfx:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}_bizfx
     mem_limit: 1GB
-    volumes:
-      - .\data\certificates:C:\certificates
-      - .\entrypoints:C:\tools\entrypoints\custom
     ports:
       - "4200:80"
-    environment:
-      IIS_HOSTS: ${HOSTS_BIZFX}
-      SSL_CERTIFICATE_NAME: ${SSL_CERTIFICATE_NAME}
-      SSL_CERTIFICATE_PASSWORD: ${SSL_CERTIFICATE_PASSWORD}
     depends_on:
       - commerce-authoring
       - identity
@@ -279,14 +262,8 @@ services:
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\identity:C:\inetpub\wwwroot\logs
-      - .\data\certificates:C:\certificates
-      - .\entrypoints:C:\tools\entrypoints\custom
     ports:
       - "44008:80"
-    environment:
-      IIS_HOSTS: ${HOSTS_IDENTITY}
-      SSL_CERTIFICATE_NAME: ${SSL_CERTIFICATE_NAME}
-      SSL_CERTIFICATE_PASSWORD: ${SSL_CERTIFICATE_PASSWORD}
     depends_on:
       - sql
     isolation: ${ISOLATION}

@@ -39,6 +39,8 @@ function Update-ContainerHosts(){
 
 $projectName = Get-ComposeVariable -Key "COMPOSE_PROJECT_NAME"
 
+Update-ContainerHosts -ContainerName "$($projectName)_sql" -ComposeVariable "HOSTS_SQL"
+Update-ContainerHosts -ContainerName "$($projectName)_solr" -ComposeVariable "HOSTS_SOLR"
 Update-ContainerHosts -ContainerName "$($projectName)_cm" -ComposeVariable "HOSTS_CM"
 Update-ContainerHosts -ContainerName "$($projectName)_cd" -ComposeVariable "HOSTS_CD"
 Update-ContainerHosts -ContainerName "$($projectName)_identity" -ComposeVariable "HOSTS_IDENTITY"
