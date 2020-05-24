@@ -251,7 +251,6 @@ services:
   bizfx:
     image: ${REGISTRY}sitecore-xc-bizfx:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}_bizfx
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\custom\\Startup-Bizfx.ps1"
     mem_limit: 1GB
     volumes:
       - .\data\certificates:C:\certificates
@@ -276,7 +275,6 @@ services:
   identity:
     image: ${REGISTRY}sitecore-xc-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     container_name: ${COMPOSE_PROJECT_NAME}_identity
-    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\custom\\Startup-Identity.ps1"
     mem_limit: 1GB
     volumes:
       - ${LICENSE_PATH}:C:\license
