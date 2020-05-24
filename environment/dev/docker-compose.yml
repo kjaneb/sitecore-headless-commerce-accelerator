@@ -114,7 +114,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
-      - .\output\cd:C:\src
+      - .\deploy\website:C:\src
       - ${REMOTE_DEBUGGER_PATH}:C:\remote_debugger
     mem_limit: 2GB
     ports:
@@ -146,7 +146,7 @@ services:
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
-      - .\output\cm:C:\src
+      - .\deploy\website:C:\src
       - ${REMOTE_DEBUGGER_PATH}:C:\remote_debugger
     ports:
       - "44001:80"

@@ -46,5 +46,8 @@ Update-ContainerHosts -ContainerName "$($projectName)_cd" -ComposeVariable "HOST
 Update-ContainerHosts -ContainerName "$($projectName)_identity" -ComposeVariable "HOSTS_IDENTITY"
 Update-ContainerHosts -ContainerName "$($projectName)_bizfx" -ComposeVariable "HOSTS_BIZFX"
 Update-ContainerHosts -ContainerName "$($projectName)_commerce-authoring" -ComposeVariable "HOSTS_COMMERCE-AUTHORING"
+Update-ContainerHosts -ContainerName "$($projectName)_commerce-ops" -ComposeVariable "HOSTS_COMMERCE-OPS"
+Update-ContainerHosts -ContainerName "$($projectName)_commerce-shops" -ComposeVariable "HOSTS_COMMERCE-SHOPS"
+Update-ContainerHosts -ContainerName "$($projectName)_commerce-minions" -ComposeVariable "HOSTS_COMMERCE-MINIONS"
 
 Write-Host "Hosts file updated." -fore Green

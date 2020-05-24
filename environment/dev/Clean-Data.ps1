@@ -4,8 +4,8 @@ Get-ChildItem -Path (Join-Path $PSScriptRoot "\data") -Directory | ForEach-Objec
 }
 Write-Host "Cleaned \data." -fore Green
 
-Get-ChildItem -Path (Join-Path $PSScriptRoot "\output") -Directory | ForEach-Object {
+Get-ChildItem -Path (Join-Path $PSScriptRoot "\deploy") -Directory | ForEach-Object {
     $dataPath = $_.FullName
     Get-ChildItem -Path $dataPath -Exclude ".gitkeep" -Recurse | Remove-Item -Force -Recurse
 }
-Write-Host "Cleaned \output." -fore Green
+Write-Host "Cleaned \deploy." -fore Green
