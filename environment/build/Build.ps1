@@ -56,3 +56,32 @@ function Download-Packages {
 }
 
 Download-Packages
+
+$windowsServerCore = "mcr.microsoft.com/windows/servercore:ltsc2019"
+$windowsNanoServer = "mcr.microsoft.com/windows/nanoserver:1809"
+
+$repository = "sitecore-headless-commerce-accelerator"
+$modulesImage = "$repository/modules:latest"
+
+docker build `
+    --build-arg WORKER_IMAGE=$windowsServerCore `
+    --build-arg BASE_IMAGE=$windowsNanoServer `
+    --no-cache=true `
+    -t $modulesImage `
+    .\modules
+    
+$standalone = "sitecore-xc-standalone:9.3.0-windowsservercore-ltsc2019"
+docker build `
+    --build-arg BASE_IMAGE=$standalone `
+    --build-arg MODULES_IMAGE=$modulesImage `
+    --no-cache=true `
+    -t "$repository/sitecore-xc-jss-standalone:latest" `
+    .\cm
+
+$cd = "sitecore-xc-cd:9.3.0-windowsservercore-ltsc2019"
+docker build `
+    --build-arg BASE_IMAGE=$cd `
+    --build-arg MODULES_IMAGE=$modulesImage `
+    --no-cache=true `
+    -t "$repository/sitecore-xc-jss-cd:latest" `
+    .\cd
