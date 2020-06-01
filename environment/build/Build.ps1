@@ -85,3 +85,11 @@ docker build `
     --no-cache=true `
     -t "$repository/sitecore-xc-jss-cd:latest" `
     .\cd
+
+$sql = "sitecore-xc-sqldev:9.3.0-windowsservercore-ltsc2019"
+docker build `
+    --build-arg BASE_IMAGE=$sql `
+    --build-arg MODULES_IMAGE=$modulesImage `
+    --no-cache=true `
+    -t "$repository/sitecore-xc-sql:latest" `
+    .\sql

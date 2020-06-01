@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   sql:
-    image: ${REGISTRY}sitecore-xc-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: sitecore-headless-commerce-accelerator/sitecore-xc-sql:latest
     container_name: ${COMPOSE_PROJECT_NAME}_sql
     volumes:
       - .\data\sql:C:\Data
@@ -109,7 +109,7 @@ services:
     isolation: ${ISOLATION}
 
   cd:
-    image: ${REGISTRY}sitecore-xc-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: sitecore-headless-commerce-accelerator/sitecore-xc-jss-cd:latest
     container_name: ${COMPOSE_PROJECT_NAME}_cd
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
@@ -141,7 +141,7 @@ services:
     isolation: ${ISOLATION}
 
   cm:
-    image: ${REGISTRY}sitecore-xc-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: sitecore-headless-commerce-accelerator/sitecore-xc-jss-standalone:latest
     container_name: ${COMPOSE_PROJECT_NAME}_cm
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     volumes:
