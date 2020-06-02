@@ -24,7 +24,7 @@ Sitecore.Parameters.InitParams(
     solutionName: "HCA",
     scSiteUrl: "https://cm.sitecore.local", // default URL exposed from the box
     unicornSerializationRoot: "unicorn-HCA",
-    publishingTargetDir: ".\\environment\\dev\\deploy\\website",
+    publishingTargetDir: ".\\..\\environment\\dev\\deploy\\website",
     xUnitTestsCoverageRegister: "Path64",
     xUnitTestsCoverageExcludeAttributeFilters: "*ExcludeFromCodeCoverage*",
     xUnitTestsCoverageExcludeFileFilters: "*.Generated.cs;*\\App_Start\\*"
