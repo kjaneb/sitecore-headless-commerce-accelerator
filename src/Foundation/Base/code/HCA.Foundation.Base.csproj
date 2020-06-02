@@ -460,6 +460,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\HCA\Foundation.Base.config" />
     <Content Include="App_Config\Include\Foundation\HCA\Foundation.Base.Serialization.config" />
+    <None Include="Properties\PublishProfiles\DockerDev.pubxml" />
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -519,6 +519,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Project\HCA\Project.HCA.Serialization.config" />
+    <None Include="Properties\PublishProfiles\DockerDev.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDev.pubxml">
       <SubType>Designer</SubType>
     </None>

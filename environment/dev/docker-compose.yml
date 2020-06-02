@@ -147,7 +147,7 @@ services:
     volumes:
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
       - .\deploy\website:C:\src
-      - .\..\..\src:C:\serialization
+      - .\..\..\src:C:\inetpub\wwwroot\App_Data\unicorn-HCA
       - ${REMOTE_DEBUGGER_PATH}:C:\remote_debugger
     ports:
       - "44001:80"

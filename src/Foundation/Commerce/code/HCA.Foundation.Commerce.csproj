@@ -744,6 +744,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\HCA\Foundation.Commerce.Serialization.config" />
+    <None Include="Properties\PublishProfiles\DockerDev.pubxml" />
     <None Include="Properties\PublishProfiles\LocalDev.pubxml">
       <SubType>Designer</SubType>
     </None>

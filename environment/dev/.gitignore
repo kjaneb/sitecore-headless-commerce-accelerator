@@ -3,8 +3,8 @@ data/**
 !data/*/
 !data/**/*/
 !data/**/*/.gitkeep
-output/**/*
-output/**
-!output/*/
-!output/**/*/
-!output/**/*/.gitkeep
+deploy/**/*
+deploy/**
+!deploy/*/
+!deploy/**/*/
+!deploy/**/*/.gitkeep
