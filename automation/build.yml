@@ -219,7 +219,7 @@ jobs:
           ./automation/Get-Artifacts.ps1 Feature
           ./automation/Get-Artifacts.ps1 Foundation
           ./automation/Get-Artifacts.ps1 Project
-          robocopy $(Pipeline.Workspace)/s/src/Project/$(project_name)/client/build $(Pipeline.Workspace)/s/output/Project/dist /s
+          robocopy $(Pipeline.Workspace)/s/src/Project/$(project_name)/client/build $(Pipeline.Workspace)/s/output/Project/dist/$(project_name)/Project/$(project_name) /s
         errorActionPreference: 'continue'
         ignoreLASTEXITCODE: true
 
