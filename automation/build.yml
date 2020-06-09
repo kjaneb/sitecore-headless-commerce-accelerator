@@ -216,10 +216,10 @@ jobs:
         script: |
           robocopy $(Pipeline.Workspace)/s/src/configs/Sitecore/ $(Pipeline.Workspace)/s/output/ web.config
           robocopy $(Pipeline.Workspace)/s/src/tools/cake.sitecore/Cake.Sitecore/tools/unicorn $(Pipeline.Workspace)/s/output/unicorn-sync /s
-          robocopy $(Pipeline.Workspace)/s/src/Project/$(project_name)/website/dist $(Pipeline.Workspace)/s/output/Project/dist /s
           ./automation/Get-Artifacts.ps1 Feature
           ./automation/Get-Artifacts.ps1 Foundation
           ./automation/Get-Artifacts.ps1 Project
+          robocopy $(Pipeline.Workspace)/s/src/Project/$(project_name)/client/build $(Pipeline.Workspace)/s/output/Project/dist /s
         errorActionPreference: 'continue'
         ignoreLASTEXITCODE: true
 
