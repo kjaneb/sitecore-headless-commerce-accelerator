@@ -8,5 +8,6 @@ COPY --from=modules C:/modules/content C:/temp
 COPY ./scripts C:/scripts
 
 RUN powershell "C:\\scripts\\Install-Modules.ps1"; \
+    powershell "C:\\scripts\\Install-NodeJs.ps1" \
     Remove-Item "C:\\scripts" -Force -Recurse; \
     Remove-Item "C:\\temp" -Force -Recurse
