@@ -7,11 +7,13 @@ DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: Office/32x32/reset_settings.png
+  Value: office/32x32/gearwheels.png
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
-  Value: "{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"
+  Value: |
+    {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+    {7724BF37-C8C6-4189-B7C9-7ED566AC76D8}
 - ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
   Value: "{134A0E28-8517-484C-9FF8-077A7A2CDBB0}"

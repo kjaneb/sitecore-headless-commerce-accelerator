@@ -18,6 +18,7 @@ import * as JSS from 'Foundation/ReactJss/client';
 export interface SummaryProps {
     order: Commerce.Cart;
     productColors: Commerce.ProductColors;
+    fallbackImageUrl: string;
 }
 
 export interface SummaryState extends JSS.SafePureComponentState {}

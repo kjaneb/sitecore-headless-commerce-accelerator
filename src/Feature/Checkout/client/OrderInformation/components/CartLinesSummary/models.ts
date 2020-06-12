@@ -16,7 +16,8 @@ import * as Commerce from 'Foundation/Commerce/client';
 import * as JSS from 'Foundation/ReactJss/client';
 
 export interface CartLinesSummaryProps {
-  cartLines: Commerce.CartLineModel[];
+  cartLines: Commerce.CartLine[];
+  fallbackImageUrl: string;
 }
 
 export interface CartLinesSummaryState extends JSS.SafePureComponentState {}

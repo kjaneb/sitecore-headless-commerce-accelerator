@@ -532,19 +532,19 @@
     <Analyzer Include="..\..\..\packages\xunit.analyzers.0.8.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Account\code\HCA.Foundation.Account.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Account\website\HCA.Foundation.Account.csproj">
       <Project>{74c245aa-2561-4a2a-adbd-e7d4045f6227}</Project>
       <Name>HCA.Foundation.Account</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Base\code\HCA.Foundation.Base.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Base\website\HCA.Foundation.Base.csproj">
       <Project>{ff564a60-1cc7-4bae-b859-88de35fda77a}</Project>
       <Name>HCA.Foundation.Base</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Commerce\code\HCA.Foundation.Commerce.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Commerce\website\HCA.Foundation.Commerce.csproj">
       <Project>{4cd01a37-76d8-4a6a-8822-014369c4243d}</Project>
       <Name>HCA.Foundation.Commerce</Name>
     </ProjectReference>
-    <ProjectReference Include="..\code\HCA.Feature.Account.csproj">
+    <ProjectReference Include="..\website\HCA.Feature.Account.csproj">
       <Project>{f113fc93-32d0-417a-8093-d2c6cfdaeea9}</Project>
       <Name>HCA.Feature.Account</Name>
     </ProjectReference>

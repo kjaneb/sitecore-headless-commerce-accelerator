@@ -27,16 +27,18 @@ export interface ShippingStateProps {
   shippingInfo: Checkout.Data<Commerce.ShippingInfo>;
   isSubmitting: boolean;
   isLoading: boolean;
-  commerceUser: Commerce.CommerceUserModel;
+  commerceUser: Commerce.User;
 }
 export interface ShippingDispatchProps {
   InitStep: (step: Checkout.CheckoutStepType) => void;
   SubmitStep: (stepValues: Checkout.StepValues) => void;
+  AddAddressToAccount: (address: Commerce.Address) => void;
 }
 
 export interface ShippingProps extends ShippingOwnProps, ShippingStateProps, ShippingDispatchProps {}
 
 export interface ShippingState extends Jss.SafePureComponentState {
   selectedAddressOption: string;
+  disableSaveToMyAccount: boolean;
 }
 export interface AppState extends Checkout.GlobalCheckoutState, Checkout.AppState {}

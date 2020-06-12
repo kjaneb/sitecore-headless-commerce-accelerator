@@ -6,7 +6,7 @@
 
 #load ./scripts/cake/xunit.cake
 #load ./scripts/cake/coverage.cake
-#load ./scripts/generateTypescript.cake
+#load ./scripts/code-generation/generateTypescript.cake
 
 // //////////////////////////////////////////////////
 // Arguments
@@ -27,7 +27,8 @@ Sitecore.Parameters.InitParams(
     publishingTargetDir: ".\\..\\environment\\dev\\deploy\\website",
     xUnitTestsCoverageRegister: "Path64",
     xUnitTestsCoverageExcludeAttributeFilters: "*ExcludeFromCodeCoverage*",
-    xUnitTestsCoverageExcludeFileFilters: "*.Generated.cs;*\\App_Start\\*"
+    xUnitTestsCoverageExcludeFileFilters: "*.Generated.cs;*\\App_Start\\*",
+    supportHelix20: "true"
 );
 
 // //////////////////////////////////////////////////
@@ -52,9 +53,9 @@ Task("Generate-Client-Models")
             var project = match.Groups["projectName"];
 
             var tsFile = templateFile.GetDirectory().CombineWithFilePath(new FilePath(templateFile.GetFilenameWithoutExtension() + ".ts"));
-            var dllFile = GetFiles($"./../src/{layer}/{project}/code/**/*.{layer}.{project}.dll").FirstOrDefault();
+            var dllFile = GetFiles($"./../src/{layer}/{project}/website/**/*.{layer}.{project}.dll").FirstOrDefault();
 
-            generateTypeScript(dllFile, tsFile);
+            generateTypeScript(dllFile, tsFile, templateFile);
         }
     });
 
@@ -81,18 +82,10 @@ Task("000-Clean")
     .IsDependentOn(Sitecore.Tasks.CleanWildcardFoldersTaskName)
     .Does(() => {
         DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Unicorn\*");    
-        DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Foundation\HCA\*");        
-        DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Feature\HCA\*");        
-        DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Project\HCA\*");      
+        DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Foundation\HCA.*");        
+        DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Feature\HCA.*");        
+        DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Project\HCA.*");      
         DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\bin\HCA.*");
-        
-        //TODO: REMOVE
-            DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Foundation\Wooli\*");
-            DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Feature\Wooli\*");
-            DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\App_Config\Include\Project\Wooli\*");   
-            DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\bin\Wooli.*");   
-            DeleteFiles(Sitecore.Parameters.PublishingTargetDir + @"\dist\Wooli\*");   
-        //
     });
 
 Task("001-Restore")

@@ -14,15 +14,14 @@
 
 import * as React from 'react';
 
-import { OrderConfirmationProps, OrderConfirmationState } from './models';
-
-import * as Jss from 'Foundation/ReactJss/client';
+import * as JSS from 'Foundation/ReactJss/client';
 
 import { Confirmation, Summary, ThankYouMessage  } from './components';
+import { OrderConfirmationProps, OrderConfirmationState } from './models';
 
 import './styles.scss';
 
-export class OrderConfirmationControl extends Jss.SafePureComponent<OrderConfirmationProps, OrderConfirmationState> {
+export class OrderConfirmationComponent extends JSS.SafePureComponent<OrderConfirmationProps, OrderConfirmationState> {
   constructor(props: OrderConfirmationProps) {
     super(props);
   }
@@ -52,7 +51,7 @@ export class OrderConfirmationControl extends Jss.SafePureComponent<OrderConfirm
     return (
       <>
         <ThankYouMessage order={currentOrder} />
-        <Summary order={currentOrder} productColors={sitecoreContext.productColors} />
+        <Summary order={currentOrder} productColors={sitecoreContext.productColors} fallbackImageUrl={sitecoreContext.fallbackImageUrl} />
         <Confirmation order={currentOrder} />
       </>
     );
