@@ -2,7 +2,7 @@ version: '2.4'
 
 services:
   sql:
-    image: sitecore-headless-commerce-accelerator/sitecore-xc-sql:latest
+    image: ${REGISTRY}sitecore-xc-sql:v1
     container_name: ${COMPOSE_PROJECT_NAME}_sql
     volumes:
       - .\data\sql:C:\Data
@@ -109,8 +109,7 @@ services:
     isolation: ${ISOLATION}
 
   cm:
-    # image: sitecore-xc-standalone:9.3.0-windowsservercore-ltsc2019
-    image: sitecore-headless-commerce-accelerator/sitecore-xc-jss-standalone:latest
+    image: ${REGISTRY}sitecore-xc-jss-standalone:v1
     container_name: ${COMPOSE_PROJECT_NAME}_cm
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\custom\\Startup-Cm.ps1"
     volumes:
