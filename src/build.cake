@@ -8,6 +8,7 @@
 #load ./scripts/cake/coverage.cake
 #load ./scripts/cake/client.cake
 #load ./scripts/cake/solr.cake
+#load ./scripts/cake/backendbuild.cake
 
 // //////////////////////////////////////////////////
 // Arguments
@@ -21,7 +22,7 @@ var Target = ArgumentOrEnvironmentVariable("target", "", "Default");
 Sitecore.Constants.SetNames();
 Sitecore.Parameters.InitParams(
     context: Context,
-    msBuildToolVersion: MSBuildToolVersion.VS2019,
+    msBuildToolVersion: MSBuildToolVersion.VS2017,
     solutionName: "HCA",
     scSiteUrl: "https://sc10_sc.dev.local", // default URL exposed from the box
     unicornSerializationRoot: "unicorn-hca",
@@ -117,6 +118,10 @@ Task("006-Sync-Content")
 
 Task("007-Update-SolrConfig")
     .IsDependentOn(Solr.AddSuggesterComponents)
+    ;
+
+Task("008-Build-Server-Code")
+    .IsDependentOn(Server.BuildCodeTask)
     ;
 	
 // //////////////////////////////////////////////////
