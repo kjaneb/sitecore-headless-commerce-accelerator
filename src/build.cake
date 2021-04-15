@@ -23,9 +23,9 @@ Sitecore.Parameters.InitParams(
     context: Context,
     msBuildToolVersion: MSBuildToolVersion.VS2019,
     solutionName: "HCA",
-    scSiteUrl: "https://sc9.local", // default URL exposed from the box
+    scSiteUrl: "https://sc10_sc.dev.local", // default URL exposed from the box
     unicornSerializationRoot: "unicorn-hca",
-    publishingTargetDir: "\\\\192.168.50.4\\c$\\inetpub\\wwwroot\\sc9.local",
+    publishingTargetDir: "\\\\192.168.50.4\\c$\\inetpub\\wwwroot\\sc10_sc.dev.local",
     xUnitTestsCoverageRegister: "Path64",
     xUnitTestsCoverageExcludeAttributeFilters: "*ExcludeFromCodeCoverage*",
     xUnitTestsCoverageExcludeFileFilters: "*.Generated.cs;*\\App_Start\\*",
