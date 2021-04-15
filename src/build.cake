@@ -40,7 +40,7 @@ Client.InitParams(
 Solr.InitParams(
     context: Context,
     solrPort: "8983",
-    solrCore: "sc9_master_index"
+    solrCore: "sc10__master_index"
 );
 
 // //////////////////////////////////////////////////
