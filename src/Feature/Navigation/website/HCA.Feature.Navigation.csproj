@@ -546,9 +546,6 @@
       <HintPath>..\..\..\packages\RainbowCodeGeneration.0.3.0\lib\net452\RainbowCodeGeneration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="TypeLite, Version=1.8.2.0, Culture=neutral, PublicKeyToken=8cd4b9c9ac23d744, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\TypeLite.Lib.1.8.4\lib\net4\TypeLite.dll</HintPath>
     </Reference>
