@@ -20,7 +20,7 @@ namespace HCA.Feature.Checkout.Infrastructure.Pipelines.GetLayoutServiceContext
     using Sitecore.JavaScriptServices.Configuration;
     using Sitecore.LayoutService.ItemRendering.Pipelines.GetLayoutServiceContext;
 
-    using Constants = Constants;
+    using Constants = Feature.Checkout.Constants;
 
     public class CommerceUserContextExtension : BaseSafeJssGetLayoutServiceContextProcessor
     {
