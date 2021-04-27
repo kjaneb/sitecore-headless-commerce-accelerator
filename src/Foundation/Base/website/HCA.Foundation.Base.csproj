@@ -305,8 +305,8 @@
     <Reference Include="Sitecore.Framework.Data.Blobs.Abstractions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.Framework.Data.Blobs.Abstractions.1.1.0\lib\netstandard2.0\Sitecore.Framework.Data.Blobs.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.JavaScriptServices.AppServices, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.AppServices.14.0.0\lib\net471\Sitecore.JavaScriptServices.AppServices.dll</HintPath>
+    <Reference Include="Sitecore.JavaScriptServices.AppServices, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.AppServices.15.0.0\lib\net48\Sitecore.JavaScriptServices.AppServices.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.JavaScriptServices.Configuration, Version=16.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.Configuration.16.0.1\lib\net48\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
@@ -317,17 +317,17 @@
     <Reference Include="Sitecore.JavaScriptServices.Globalization, Version=16.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.Globalization.16.0.1\lib\net48\Sitecore.JavaScriptServices.Globalization.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.JavaScriptServices.GraphQL, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.GraphQL.14.0.0\lib\net471\Sitecore.JavaScriptServices.GraphQL.dll</HintPath>
+    <Reference Include="Sitecore.JavaScriptServices.GraphQL, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.GraphQL.15.0.0\lib\net48\Sitecore.JavaScriptServices.GraphQL.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.JavaScriptServices.ViewEngine, Version=16.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.ViewEngine.16.0.1\lib\net48\Sitecore.JavaScriptServices.ViewEngine.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.JavaScriptServices.ViewEngine.Node, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.ViewEngine.Node.14.0.0\lib\net471\Sitecore.JavaScriptServices.ViewEngine.Node.dll</HintPath>
+    <Reference Include="Sitecore.JavaScriptServices.ViewEngine.Node, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.ViewEngine.Node.15.0.0\lib\net48\Sitecore.JavaScriptServices.ViewEngine.Node.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.JavaScriptServices.ViewEngine.NodeServices, Version=14.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.ViewEngine.NodeServices.14.0.0\lib\net471\Sitecore.JavaScriptServices.ViewEngine.NodeServices.dll</HintPath>
+    <Reference Include="Sitecore.JavaScriptServices.ViewEngine.NodeServices, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.JavaScriptServices.ViewEngine.NodeServices.15.0.0\lib\net48\Sitecore.JavaScriptServices.ViewEngine.NodeServices.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=15.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.Kernel.10.0.0\lib\net48\Sitecore.Kernel.dll</HintPath>
@@ -386,14 +386,14 @@
     <Reference Include="Sitecore.Services.Core, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.Services.Core.10.0.0\lib\net48\Sitecore.Services.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Services.GraphQL, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.Services.GraphQL.3.0.0\lib\netstandard2.0\Sitecore.Services.GraphQL.dll</HintPath>
+    <Reference Include="Sitecore.Services.GraphQL, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.Services.GraphQL.10.0.0\lib\netstandard2.0\Sitecore.Services.GraphQL.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Services.GraphQL.Content, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.Services.GraphQL.ContentSchema.3.0.0\lib\net471\Sitecore.Services.GraphQL.Content.dll</HintPath>
+    <Reference Include="Sitecore.Services.GraphQL.Content, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.Services.GraphQL.ContentSchema.10.0.0\lib\net48\Sitecore.Services.GraphQL.Content.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Services.GraphQL.NetFxHost, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sitecore.Services.GraphQL.NetFxHost.3.0.0\lib\net471\Sitecore.Services.GraphQL.NetFxHost.dll</HintPath>
+    <Reference Include="Sitecore.Services.GraphQL.NetFxHost, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Sitecore.Services.GraphQL.NetFxHost.10.0.0\lib\net48\Sitecore.Services.GraphQL.NetFxHost.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Services.Infrastructure, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Sitecore.Services.Infrastructure.10.0.0\lib\net48\Sitecore.Services.Infrastructure.dll</HintPath>
